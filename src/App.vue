@@ -19,6 +19,7 @@ export default {
   },
   data: ()=>({
     imgs:[
+      //Put your own images in here :) 
       {id:0, src:[require("./assets/jonathan-petit-unsplash.jpg")]},
       {id:1, src:[require("./assets/kevin-mueller-unsplash.jpg")]},
       {id:2, src:[require("./assets/jonathan-petit-unsplash.jpg")]},

@@ -12,30 +12,26 @@ export default {
     props: ['images'],
     methods: {gridArray:function(){
         var grArray = [];
-        var len = this.images.length;
-        var counter = 0;
-        for(var i = 0; i<len;i++){
-            if(counter >=5){counter=0;}
+        var len = this.images.length;           //Length of the images array
+        var counter = 0;                        //a counter to define how much space is used
+        for(var i = 0; i<len;i++){              //calc a value for each img
+            if(counter >=5){counter=0;}         //The grid has 5 columns, therefore the limit is 5
             var rand = Math.floor(Math.random()*5) + 1;
             counter += rand;
-            while (counter>5){
+            while (counter>5){                  //if counter exceeds 5, make the rand value of i smaller
                 rand--;
                 counter--;
-                console.log("rand üü: " + rand + "counter = " + counter);
             }
-            console.log("counter is: " + counter + "rand is: " + rand);
-            console.log("i=" + i);
-            if(i==(len-1) ){
+            if(i==(len-1) ){                    //fill up the space by the last item
                 while(counter<5){
                     counter++;
                     rand++;
                 }
             }
-            var result = "col-span-" + rand.toString();
+            var result = "col-span-" + rand.toString(); //create the css class string
 
             grArray[i]={id:this.images[i].id,src:this.images[i].src,rs:result};
         }
-        console.log(grArray);
         return grArray;
     }
     },
